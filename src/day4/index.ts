@@ -143,7 +143,6 @@ class Day4 extends Day {
   }
 
   solveForPartTwo(input: string): string {
-    console.time('p2');
     const rawCards = this.parseInputToCards(input);
     const processedCards = rawCards.map((c) =>
       this.checkCardMatchingNumbers(c)
@@ -152,7 +151,6 @@ class Day4 extends Day {
     const totalCardCount = processedCards.reduce((count, card, i) => {
       return count + this.calculateCardCopies(card, processedCards);
     }, 0);
-    console.timeEnd('p2');
 
     return totalCardCount.toString();
   }
